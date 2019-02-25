@@ -1,5 +1,61 @@
 [
-{
+  {
+    "name": "jQuery review, jQuery click handlers, this and data attributes in jQuery, scope",
+    "date": "19-02-23",
+    "curriculum": "FSF",
+    "unit": 4,
+    "lesson": 2,
+    "class": "GTPRO201901FSF5",
+    "url": "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=65cf8b13-21ea-43e4-a36b-a9fd017351a8",
+    "host": "panopto",
+    "subcategory": [
+      "JavaScript",
+      "jQuery"
+    ]
+  },
+  {
+    "name": "Handlebars Day 2 - Getting from the back-end to the front, and back again; PUT/DELETE requests",
+    "date": "19-02-21",
+    "curriculum": "FSF",
+    "unit": 14,
+    "lesson": 2,
+    "class": "GTATL20181106FSF(235)",
+    "url": "",
+    "host": "panopto",
+    "subcategory": [
+      "Handlebars.js",
+      "JavaScript",
+      "HTTP",
+      "Express"
+    ]
+  },{
+    "name": "Introduction to DOM manipulation, vanilla JS DOM manipulation, introduction to jQuery",
+    "date": "19-02-20",
+    "curriculum": "FSF",
+    "unit": 4,
+    "lesson": 1,
+    "class": "GTPRO201901FSF5",
+    "url": "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=28f66db4-b3c0-4e8f-9e71-a9fc01786298",
+    "host": "panopto",
+    "subcategory": [
+      "jQuery",
+      "JavaScript"
+    ]
+  },{
+    "name": "Introduction to Handlebars.js",
+    "date": "19-02-19",
+    "curriculum": "FSF",
+    "unit": 14,
+    "lesson": 1,
+    "class": "GTATL20181106FSF(235)",
+    "url": "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1cc150f7-0cc6-440c-bbd1-a9fa0114c54a",
+    "host": "panopto",
+    "subcategory": [
+      "Handlebars.js",
+      "Express"
+    ]
+  },
+  {
   "name": "Launch Deck, Intro to HTML, Git, Terminal",
   "date": "19-01-28",
   "curriculum": "FSF",

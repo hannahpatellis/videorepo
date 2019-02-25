@@ -3,43 +3,30 @@ import { Container, Header, Grid, Button, Icon, Item, Dropdown } from 'semantic-
 import VideoEntry from './components/VideoEntry';
 const moment = require('moment');
 const repo = require('./repo.json');
+const classes = require('./classes.json');
+const lessons = require('./lessons.json');
+const subcategories = require('./subcategories.json');
 
 class App extends React.Component {
   state = {
     repo: repo,
-    subcategories: [
-      {
-        key: 'af',
-        value: 'af',
-        text: 'ag'
-      }
-    ],
-    lessons: [
-      {
-        key: 'af',
-        value: 'af',
-        text: 'ag'
-      }
-    ],
-    classes: [
-      {
-        key: 'af',
-        value: 'af',
-        text: 'ag'
-      }
-    ]
+    subcategories: subcategories,
+    lessons: lessons,
+    classes: classes
   }
 
   componentDidMount() {
-    let newRepo = this.state.repo;
-    newRepo.sort((a,b) => {
-      const aDate = moment(a.date, 'YY-MM-DD').format('x');
-      const bDate = moment(b.date, 'YY-MM-DD').format('x');
-      return new Date(bDate) - new Date(aDate);
-    });
-    console.log(newRepo);
-    this.setState({ repo: newRepo });
+    // let newRepo = this.state.repo;
+    // newRepo.sort((a,b) => {
+    //   const aDate = moment(a.date, 'YY-MM-DD').format('x');
+    //   const bDate = moment(b.date, 'YY-MM-DD').format('x');
+    //   return new Date(bDate) - new Date(aDate);
+    // });
+    // console.log(newRepo);
+    // this.setState({ repo: newRepo });
+
   }
+
 
   render() {
     return (
