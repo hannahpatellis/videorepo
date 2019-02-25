@@ -1,0 +1,22 @@
+[
+    {
+        "key": "ENT",
+        "value": "ENT",
+        "text": "Full-Stack Flex Other"
+    },
+    {
+        "key": "GEN",
+        "value": "GEN",
+        "text": "General"
+    },
+    {
+        "key": "FSF",
+        "value": "FSF",
+        "text": "Full-Stack Flex"
+    },
+    {
+        "key": "FSF-FT",
+        "value": "FSF-FT",
+        "text": "Full-Stack Flex Full-Time"
+    }
+]

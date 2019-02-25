@@ -6,13 +6,15 @@ const repo = require('./repo.json');
 const classes = require('./classes.json');
 const lessons = require('./lessons.json');
 const subcategories = require('./subcategories.json');
+const curricula = require('./curricula.json');
 
 class App extends React.Component {
   state = {
     repo: repo,
     subcategories: subcategories,
     lessons: lessons,
-    classes: classes
+    classes: classes,
+    curricula: curricula
   }
 
   componentDidMount() {
@@ -36,7 +38,7 @@ class App extends React.Component {
             <Grid.Row>
               <Grid.Column key={1}>
                 <Header as='h2' icon textAlign='center'>
-                  <Icon name='lab' circular color='blue' />
+                  <Header as='h1'>🐈</Header>
                   <Header.Content>Hannah Patellis' Coding Video Library</Header.Content>
                 </Header>
                 <p className="center-text">This is the private video library of development instructor Hannah Patellis. Videos in this library include in-class recordings and supplemental videos.</p>
@@ -53,6 +55,7 @@ class App extends React.Component {
                 <Dropdown placeholder='Class' search selection options={this.state.classes} className='filter-option' />
                 <Dropdown placeholder='Lesson' search selection options={this.state.lessons} className='filter-option' />
                 <Dropdown placeholder='Subcategory' search selection options={this.state.subcategories} className='filter-option' />
+                <Dropdown placeholder='Curriculum' search selection options={this.state.curricula} className='filter-option' />
                 <Button color='blue' floated='right' icon labelPosition='right'>Filter <Icon name='right chevron' /></Button>
               </Grid.Column>
             </Grid.Row>
