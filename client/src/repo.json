@@ -1194,5 +1194,31 @@
   "parts": [
     "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f98c2369-f682-4a06-b95c-a9bb000e4fb9"
   ]
+},
+{
+  "name": "Computer Science: Data Structures",
+  "date": "18-06-26",
+  "curriculum": "FSF-FT",
+  "unit": 11,
+  "lesson": 2,
+  "class": "NUCHI201804FSF5-FT",
+  "url": "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=697369a0-88d1-474f-af27-a9ff01532329",
+  "host": "panopto",
+  "subcategory": [
+    "Computer Science"
+  ]
+},
+{
+  "name": "Computer Science: Sorting Algorithms",
+  "date": "18-06-25",
+  "curriculum": "FSF-FT",
+  "unit": 11,
+  "lesson": 1,
+  "class": "NUCHI201804FSF5-FT",
+  "url": "https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1e71d2c1-12a3-40fd-a40b-a9ff01567d04",
+  "host": "panopto",
+  "subcategory": [
+    "Computer Science"
+  ]
 }
 ]

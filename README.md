@@ -1,8 +1,7 @@
 ### To do:
 #### React
-- Add multi-part videos
 - Sort categories and subcategories alphabetically
-- Sort videos by date
+- Filter doodad
 - Password auth
 - API with token
 

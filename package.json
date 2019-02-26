@@ -1,32 +1,28 @@
 {
-  "name": "hannahvideos",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "http://hannahpatellis.github.io/hannahvideos/",
-  "dependencies": {
-    "gh-pages": "^2.0.1",
-    "moment": "^2.24.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.85.0"
-  },
+  "name": "gthousedash",
+  "version": "1.0.0",
+  "description": "House point dashboard for Georgia Tech coding bootcamp",
+  "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.15.4",
+    "if-env": "^1.0.4",
+    "mongojs": "^2.3.0"
+  }
 }
