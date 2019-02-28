@@ -20,7 +20,8 @@ class App extends React.Component {
     selectedLesson: '',
     selectedClass: '',
     selectedCurriculum: '',
-    currentDisplay: repo
+    currentDisplay: repo,
+    auth: false
   }
 
   handleChange = (e, data) => {
