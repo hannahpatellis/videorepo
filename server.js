@@ -9,7 +9,10 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-const db = mongojs(process.env.MONGODB_URI, ['repo', 'classes', 'lessons', 'subcategories', 'curricula']);
+const db = mongojs(
+  process.env.MONGODB_URI,
+  ['repo', 'classes', 'lessons', 'subcategories', 'curricula', 'tokens']
+);
 
 db.on('error', error => {
   console.log('Database Error: ', error);
@@ -31,7 +34,23 @@ const getData = collection => {
   });
 };
 
-app.get('/api/data', (req, res) => {
+const createToken = () => {
+  const token =  Math.floor(Math.random() * Math.floor(100000000000));
+  return new Promise((resolve, reject) => {
+    db.tokens.insert({
+      'token': token,
+      'issued': new Date
+    }, (err, result) => {
+      if(err) reject(err);
+      resolve(result);
+    });
+  });
+  
+  
+}
+
+app.post('/api/data', (req, res) => {
+  console.log('token', req.body.token);
   Promise.all([
       getData('repo'),
       getData('classes'),
@@ -48,7 +67,25 @@ app.get('/api/data', (req, res) => {
         curricula: data[4]
       };
       res.json(ret);
+    })
+    .catch(err => {
+      console.error(err);
     });
+});
+
+app.post('/api/auth', (req, res) => {
+  if(req.body.password === process.env.PASSWORD) {
+    createToken()
+      .then(data => {
+        res.json({ auth: true, token: data.token });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+    
+  } else {
+    res.json({ auth: false, error: 'password' });
+  }
 });
 
 app.get('*', (req, res) => {

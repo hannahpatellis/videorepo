@@ -13,3 +13,11 @@ body {
 .nopad {
   margin: 0 0 0 0!important;
 }
+.password-holder {
+  margin: 0 auto;
+  text-align:center;
+  margin-top: 20%;
+}
+.password-holder img {
+  margin-bottom: 20px;
+}

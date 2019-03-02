@@ -83,7 +83,7 @@ const VideoEntry = (e) => {
         </Item.Meta>
         <Item.Extra>
           {e.e.subcategory.map(subcategory => (
-            <Label>{subcategory}</Label>
+            <Label key={subcategory}>{subcategory}</Label>
           ))}
           {parting()}
         </Item.Extra>
