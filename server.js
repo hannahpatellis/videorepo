@@ -85,7 +85,7 @@ app.post('/api/data', (req, res) => {
       });
     })
     .catch(err => {
-      res.json({ auth: false, error: 'token not found' });
+      res.status(403).json({ auth: false, error: 'token not found' });
     });
 });
 
@@ -100,7 +100,7 @@ app.post('/api/auth', (req, res) => {
       });
     
   } else {
-    res.json({ auth: false, error: 'password' });
+    res.status(401).json({ auth: false, error: 'password' });
   }
 });
 
