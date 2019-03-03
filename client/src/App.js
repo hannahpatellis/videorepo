@@ -67,6 +67,12 @@ class App extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.handleAuth();
+    }
+  }
+
   sortByDate = (toSort) => {
     let newRepo = toSort;
     newRepo.sort((a, b) => {
@@ -131,6 +137,7 @@ class App extends React.Component {
                 icon={<Icon name='chevron right' onClick={this.handleAuth} inverted circular link />}
                 onChange={this.handlePasswordChange}
                 value={this.state.password}
+                onKeyPress={this.handleKeyPress}
                 name='password'
                 type='password'
                 placeholder='Password'

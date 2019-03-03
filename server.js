@@ -45,31 +45,47 @@ const createToken = () => {
       resolve(result);
     });
   });
-  
-  
+}
+
+const validateToken = token => {
+  token = parseInt(token);
+  return new Promise((resolve, reject) => {
+    db.tokens.find({ 'token': token }, (err, result) => {
+      if(result.length >= 1) {
+        resolve({ found: true });
+      } else {
+        reject({ found: false });
+      }
+    });
+  });
 }
 
 app.post('/api/data', (req, res) => {
-  console.log('token', req.body.token);
-  Promise.all([
-      getData('repo'),
-      getData('classes'),
-      getData('lessons'),
-      getData('subcategories'),
-      getData('curricula')
-    ])
-    .then(data => {
-      let ret = {
-        repo: data[0],
-        classes: data[1],
-        lessons: data[2],
-        subcategories: data[3],
-        curricula: data[4]
-      };
-      res.json(ret);
+  validateToken(req.body.token)
+    .then(result => {
+      Promise.all([
+        getData('repo'),
+        getData('classes'),
+        getData('lessons'),
+        getData('subcategories'),
+        getData('curricula')
+      ])
+      .then(data => {
+        let ret = {
+          repo: data[0],
+          classes: data[1],
+          lessons: data[2],
+          subcategories: data[3],
+          curricula: data[4]
+        };
+        res.json(ret);
+      })
+      .catch(err => {
+        console.error(err);
+      });
     })
     .catch(err => {
-      console.error(err);
+      res.json({ auth: false, error: 'token not found' });
     });
 });
 
