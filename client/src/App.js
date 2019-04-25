@@ -103,7 +103,7 @@ class App extends React.Component {
 
                 <hr />
 
-                {/* <Grid.Row>
+                <Grid.Row>
                   <Grid.Column key={1}>
                     <Header as='h4'>Filter results</Header>
                     <Dropdown placeholder='Class' search selection options={this.state.classes} className='filter-option' dataField='selectedClass' onChange={this.handleChange} />
@@ -114,7 +114,7 @@ class App extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
 
-                <hr /> */}
+                <hr />
 
                 <Grid.Row>
                   <Grid.Column key={1}>
