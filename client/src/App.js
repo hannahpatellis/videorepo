@@ -24,17 +24,41 @@ class App extends React.Component {
   }
 
   handleChange = (e, data) => {
-    this.setState({ [data.dataField]: data.value });
+    this.setState({ [data.datafield]: data.value });
   }
 
-  // handleFilter = () => {
-  // }
+  handleFilter = () => {
+    let selectedSubcategory = this.state.selectedSubcategory;
+    let selectedLesson = this.state.selectedLesson.split('.');
+    let selectedClass = this.state.selectedClass;
+    let selectedCurriculum = this.state.selectedCurriculum;
+    let newCurrentDisplay = [];
+
+    if(selectedSubcategory) {
+      newCurrentDisplay = this.state.repo.filter(e => e.subcategory.includes(selectedSubcategory));
+    } else {
+      newCurrentDisplay = this.state.repo;
+    }
+
+    if(selectedClass) {
+      newCurrentDisplay = newCurrentDisplay.filter(e => e.class === selectedClass);
+    }
+
+    if(selectedCurriculum) {
+      newCurrentDisplay = newCurrentDisplay.filter(e => e.curriculum === selectedCurriculum);
+    }
+
+    if(selectedLesson.length > 1) {
+      newCurrentDisplay = newCurrentDisplay.filter(e => e.unit === parseInt(selectedLesson[0]) && e.lesson === parseInt(selectedLesson[1]));
+    }
+
+    const newRepo = this.sortByDate(newCurrentDisplay);
+    this.setState({ currentDisplay: newRepo });
+  }
 
   handleAuth = () => {
-    console.log(this.state.password);
     API.default.preformAuth(this.state.password)
       .then(authData => {
-        console.log(authData);
         if (authData.data.auth) {
           API.default.getData(authData.data.token)
             .then(data => {
@@ -51,7 +75,7 @@ class App extends React.Component {
               });
             })
             .catch(err => {
-              console.log(err);
+              console.error(err);
             });
         } else {
           console.error(authData.data);
@@ -94,10 +118,9 @@ class App extends React.Component {
                   <Grid.Column key={1}>
                     <Image src={logo} size='small' centered />
                     <Header as='h2' textAlign='center'>
-                      <Header.Content>Hannah Patellis' Coding Video Library</Header.Content>
+                      <Header.Content>Hannah Patellis' Instructional Video Library</Header.Content>
                     </Header>
-                    <p className="center-text">This is the private video library of development instructor Hannah Patellis.<br />Videos in this library include in-class recordings and supplemental videos.</p>
-                    <p className="center-text">This page is still in development.</p>
+                    <p className='center-text'>This is the private video library of development and UX/UI instructor Hannah Patellis.<br />Videos in this library include in-class recordings and supplemental videos.</p>
                   </Grid.Column>
                 </Grid.Row>
 
@@ -106,11 +129,43 @@ class App extends React.Component {
                 <Grid.Row>
                   <Grid.Column key={1}>
                     <Header as='h4'>Filter results</Header>
-                    <Dropdown placeholder='Class' search selection options={this.state.classes} className='filter-option' dataField='selectedClass' onChange={this.handleChange} />
-                    <Dropdown placeholder='Lesson' search selection options={this.state.lessons} className='filter-option' dataField='selectedLesson' onChange={this.handleChange} />
-                    <Dropdown placeholder='Subcategory' search selection options={this.state.subcategories} className='filter-option' dataField='selectedSubcategory' onChange={this.handleChange} />
-                    <Dropdown placeholder='Curriculum' search selection options={this.state.curricula} className='filter-option' dataField='selectedCurriculum' onChange={this.handleChange} />
-                    <Button color='blue' floated='right' icon labelPosition='right'>Filter <Icon name='right chevron' /></Button>
+                    <Dropdown 
+                      placeholder='Class' 
+                      search 
+                      selection 
+                      clearable
+                      options={this.state.classes} 
+                      className='filter-option' 
+                      datafield='selectedClass' 
+                      onChange={this.handleChange} />
+                    <Dropdown
+                      placeholder='Lesson' 
+                      search 
+                      selection 
+                      clearable
+                      options={this.state.lessons} 
+                      className='filter-option' 
+                      datafield='selectedLesson' 
+                      onChange={this.handleChange} />
+                    <Dropdown 
+                      placeholder='Subcategory' 
+                      search 
+                      selection 
+                      clearable
+                      options={this.state.subcategories} 
+                      className='filter-option' 
+                      datafield='selectedSubcategory' 
+                      onChange={this.handleChange} />
+                    <Dropdown 
+                      placeholder='Curriculum' 
+                      search 
+                      selection 
+                      clearable
+                      options={this.state.curricula} 
+                      className='filter-option' 
+                      datafield='selectedCurriculum'
+                      onChange={this.handleChange} />
+                    <Button color='blue' floated='right' icon labelPosition='right' onClick={this.handleFilter}>Filter <Icon name='right chevron' /></Button>
                   </Grid.Column>
                 </Grid.Row>
 
@@ -119,9 +174,11 @@ class App extends React.Component {
                 <Grid.Row>
                   <Grid.Column key={1}>
                     <Item.Group divided>
-                      {this.state.currentDisplay.map(e => (
-                        <VideoEntry e={e} />
-                      ))}
+                      {this.state.currentDisplay.length > 0 ? this.state.currentDisplay.map(e => (
+                        <VideoEntry e={e} key={e._id} />
+                      )) : (
+                        <p className='center-text'>Nothing matching those filters was found.</p>
+                      )}
                     </Item.Group>
                   </Grid.Column>
                 </Grid.Row>
@@ -129,7 +186,7 @@ class App extends React.Component {
             </Container>
           </div>
         ) : (
-            <div className="password-holder">
+            <div className='password-holder'>
               <Image src={logo} size='small' centered />
               {this.state.error ? (<p>Password is incorrect</p>) : ('')}
               <Input

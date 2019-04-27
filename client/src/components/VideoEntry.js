@@ -37,7 +37,7 @@ const VideoEntry = (e) => {
     if(e.e.parts) {
       let ret = e.e.parts.map((part, index) => {
         return (
-            <a href={e.e.parts[index]}>
+            <a href={e.e.parts[index]} key={index}>
               <Button inverted color='blue' floated='right' icon labelPosition='right'>Part {index+2} <Icon name='right chevron' /></Button>
             </a>
         );
