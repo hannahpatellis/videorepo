@@ -33,3 +33,9 @@ Here is the template for the .env file, which Server relies on heavily.
 MONGODB_URI=mongodb://user:password@domain:port/database
 PASSWORD=passwordhere
 ```
+
+#### API Token Generation
+
+I used [passwordsgenerator.net](https://passwordsgenerator.net/) to generate API tokens. These are the paramaters I set.
+
+![passwordsgenerator.net token template](token.png)

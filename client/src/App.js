@@ -120,7 +120,7 @@ class App extends React.Component {
                     <Header as='h2' textAlign='center'>
                       <Header.Content>Hannah Patellis' Instructional Video Library</Header.Content>
                     </Header>
-                    <p className='center-text'>This is the private video library of development and UX/UI instructor Hannah Patellis.<br />Videos in this library include in-class recordings and supplemental videos.</p>
+                    <p className='center-text'>This is the private video library of web application development and UX/UI instructor Hannah Patellis.<br />Videos in this library include in-class lecture recordings and supplemental videos.</p>
                   </Grid.Column>
                 </Grid.Row>
 
