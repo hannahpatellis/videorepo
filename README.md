@@ -48,4 +48,4 @@ To run the application, simply run `yarn start:prod` to run in production mode (
 
 ## VideoRepo Uploader
 
-Uploader is the backend application for adding new videos to the database. It is written using Electron and currently packaged for macOS. You can find it [here (hannahvideos_uploader)](https://github.com/hannahpatellis/hannahvideos_uploader).
+Uploader is the backend application for adding new videos to the database. It is written using Electron and currently packaged for macOS. You can find it [here (hannahpatellis/videorepo_uploader)](https://github.com/hannahpatellis/videorepo_uploader).
