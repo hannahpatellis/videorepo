@@ -1,8 +1,9 @@
 {
-  "name": "hannahvideos_server",
+  "name": "videorepo_server",
   "version": "1.0.0",
-  "description": "Video repo for Hannah Patellis' coding videos",
+  "description": "Video repository server for Hannah Patellis' instructional videos",
   "main": "hannahvideos.js",
+  "author": "Alexandria 'Hannah' Isadora Patellis",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node hannahvideos.js",
@@ -12,8 +13,6 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"

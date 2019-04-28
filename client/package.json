@@ -1,6 +1,8 @@
 {
-  "name": "hannahvideos_ui",
-  "version": "0.1.0",
+  "name": "videorepo_frontend",
+  "description": "Video repository frontend for Hannah Patellis' instructional videos",
+  "author": "Alexandria 'Hannah' Isadora Patellis",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
