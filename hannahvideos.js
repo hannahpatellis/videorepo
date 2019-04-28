@@ -60,6 +60,30 @@ const validateToken = token => {
   });
 }
 
+const validateAPIKey = key => {
+  return new Promise((resolve, reject) => {
+    db.apikeys.find({ 'key': key }, (err, result) => {
+      if(result.length >= 1) {
+        resolve({ found: true });
+      } else {
+        reject({ found: false });
+      }
+    });
+  });
+}
+
+app.post('/api/new', (req, res) => {
+  validateAPIKey(req.body.token)
+    .then(result => {      
+      db.repo.insert(req.body.entry, dbResult => {
+        res.json({ success: true });
+      });
+    }).catch(err => {
+      console.log(err);
+      res.json({ success: false, error: 'API key not found' });
+    });
+});
+
 app.post('/api/data', (req, res) => {
   validateToken(req.body.token)
     .then(result => {
