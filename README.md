@@ -4,7 +4,7 @@
 
 ## What is VideoRepo?
 
-I am technical bootcamp instructor and have been in the classroom for about 2.5 years. I have amassed quite a collection of lectures and supplementary videos and wanted a way to share them all with current and former students. So in turn, I build this online video repository where videos are stored in a Mongo databased and displayed easily and with filter abilities. All protected by a password, so only valid students and faculty can get access.
+I am technical bootcamp instructor and have been in the classroom for about 2.5 years. I have amassed quite a collection of lectures and supplementary videos and wanted a way to share them all with current and former students. So in turn, I build this online video repository where videos are stored in a Mongo database and displayed easily and with filter capabilities. All protected by a password, so only valid students and faculty can get access.
 
 ### VideoRepo Frontend
 
