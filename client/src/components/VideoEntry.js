@@ -17,6 +17,9 @@ const VideoEntry = (e) => {
     case 'ENT':
       curriculum = 'Full-Stack Flex Other';
       break;
+    case 'UXUI':
+      curriculum = 'UX/UI';
+      break;
     default:
       curriculum = 'Other';
   }
