@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Header, Grid, Button, Icon, Item, Dropdown, Image, Input } from 'semantic-ui-react'
 import VideoEntry from './components/VideoEntry';
+import PasswordHolder from './components/PasswordHolder';
 const moment = require('moment');
 const logo = require('./videorepo.png');
 const API = require('./util/API');
@@ -186,20 +187,13 @@ class App extends React.Component {
             </Container>
           </div>
         ) : (
-            <div className='password-holder'>
-              <Image src={logo} size='small' centered />
-              {this.state.error ? (<p>Password is incorrect</p>) : ('')}
-              <Input
-                className='password-input'
-                icon={<Icon name='chevron right' onClick={this.handleAuth} inverted circular link />}
-                onChange={this.handlePasswordChange}
-                value={this.state.password}
-                onKeyPress={this.handleKeyPress}
-                name='password'
-                type='password'
-                placeholder='Password'
-              />
-            </div>
+          <PasswordHolder 
+            handlePasswordChange={this.handlePasswordChange}
+            handleAuth={this.handleAuth}
+            logo={logo}
+            password={this.state.password}
+            handleKeyPress={this.handleKeyPress} 
+            error={this.state.error} />           
           )}
       </div>
     );
