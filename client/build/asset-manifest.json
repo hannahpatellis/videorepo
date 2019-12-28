@@ -1,17 +1,27 @@
 {
-  "main.css": "/static/css/main.98ff5fd4.chunk.css",
-  "main.js": "/static/js/main.5896ab69.chunk.js",
-  "main.js.map": "/static/js/main.5896ab69.chunk.js.map",
-  "static/css/1.231b8845.chunk.css": "/static/css/1.231b8845.chunk.css",
-  "static/js/1.77af7eb8.chunk.js": "/static/js/1.77af7eb8.chunk.js",
-  "static/js/1.77af7eb8.chunk.js.map": "/static/js/1.77af7eb8.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/videorepo.png": "/static/media/videorepo.54959240.png",
-  "static/media/semantic.min.css": "/static/media/brand-icons.a1a749e8.svg",
-  "static/css/main.98ff5fd4.chunk.css.map": "/static/css/main.98ff5fd4.chunk.css.map",
-  "static/css/1.231b8845.chunk.css.map": "/static/css/1.231b8845.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.584b2d8f20ff6d2668d7381eb630c00a.js": "/precache-manifest.584b2d8f20ff6d2668d7381eb630c00a.js",
-  "service-worker.js": "/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.9c4211c1.chunk.css",
+    "main.js": "/static/js/main.099c4b47.chunk.js",
+    "main.js.map": "/static/js/main.099c4b47.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ed359009.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ed359009.js.map",
+    "static/css/2.5f2f5f0e.chunk.css": "/static/css/2.5f2f5f0e.chunk.css",
+    "static/js/2.48e76003.chunk.js": "/static/js/2.48e76003.chunk.js",
+    "static/js/2.48e76003.chunk.js.map": "/static/js/2.48e76003.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fcab8fb850f4443a9982567054322767.js": "/precache-manifest.fcab8fb850f4443a9982567054322767.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5f2f5f0e.chunk.css.map": "/static/css/2.5f2f5f0e.chunk.css.map",
+    "static/css/main.9c4211c1.chunk.css.map": "/static/css/main.9c4211c1.chunk.css.map",
+    "static/js/2.48e76003.chunk.js.LICENSE": "/static/js/2.48e76003.chunk.js.LICENSE",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/videorepo.png": "/static/media/videorepo.54959240.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed359009.js",
+    "static/css/2.5f2f5f0e.chunk.css",
+    "static/js/2.48e76003.chunk.js",
+    "static/css/main.9c4211c1.chunk.css",
+    "static/js/main.099c4b47.chunk.js"
+  ]
 }

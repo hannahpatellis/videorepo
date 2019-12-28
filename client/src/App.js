@@ -79,11 +79,11 @@ class App extends React.Component {
             });
         } else {
           console.error(authData.data);
-          this.setState({ error: true });
         }
       })
       .catch(err => {
         console.error(err);
+        this.setState({ error: true });
       });
   }
 
@@ -188,7 +188,7 @@ class App extends React.Component {
         ) : (
             <div className='password-holder'>
               <Image src={logo} size='small' centered />
-              {this.state.error ? (<p>Password is incorrect</p>) : ('')}
+              {this.state.error ? (<p style={{color:'red'}}>Password is incorrect</p>) : ('')}
               <Input
                 className='password-input'
                 icon={<Icon name='chevron right' onClick={this.handleAuth} inverted circular link />}
